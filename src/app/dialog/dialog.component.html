@@ -1,0 +1,11 @@
+<div>
+  <p>Title: {{data.book.title}}</p>
+  <p>Language: {{data.book.language}}</p>
+  <p>PageCount: {{data.book.pageCount}}</p>
+  <div>
+    <p>Authors:</p>
+    <div *ngFor="let author of data.book.authors">{{author}}</div>
+  </div>
+  <button>Add to wishlist</button>
+  <button (click)="onClickClose()"> Close dialog</button>
+</div>

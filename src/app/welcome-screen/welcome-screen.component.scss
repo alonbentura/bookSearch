@@ -1,0 +1,35 @@
+.container {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+
+  .input {
+    width: 200px;
+    height: 50px;
+    font-size: 20px;
+    border: solid 1px black;
+    border-radius: 20px;
+    display: flex;
+    text-align: center;
+    justify-self: center;
+    margin-bottom: 5px;
+  }
+
+  .welcome {
+    align-self: center;
+    font-size: 50px;
+    display: flex;
+    width: 380px;
+    justify-self: center;
+  }
+  .btn {
+    height: 50px;
+    border-radius: 20px;
+    width: 200px;
+    font-size: 17px;
+    color: white;
+    background-color: blue;
+    font-weight: bold;
+    justify-self: center;
+  }
+}

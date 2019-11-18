@@ -1,0 +1,14 @@
+<div>
+  <p class="welcome">Welcome {{user}} </p>
+  <div class="search-input-container">
+    <p>Search A Book</p>
+    <div>
+      <input matInput placeholder="Enter Your Search" class="input" (change)="onSearch($event.target.value)">
+      <button class="btn" (click)="onClickSearch()">Search</button>
+    </div>
+  </div>
+  <ul>
+    <div (click)="onClickResult(book.volumeInfo)" class="search-result" *ngFor="let book of books">{{book.volumeInfo.title
+        }}</div>
+  </ul>
+</div>
