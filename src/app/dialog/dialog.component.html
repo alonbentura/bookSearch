@@ -6,6 +6,6 @@
     <p>Authors:</p>
     <div *ngFor="let author of data.book.authors">{{author}}</div>
   </div>
-  <button>Add to wishlist</button>
+  <button (click)="addToWishList()">Add to wishlist</button>
   <button (click)="onClickClose()"> Close dialog</button>
 </div>

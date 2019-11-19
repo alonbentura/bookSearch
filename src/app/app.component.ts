@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { Store, State } from '@ngrx/store';
+
+// tslint:disable-next-line:no-empty-interface
+interface AppState { }
 
 @Component({
   selector: 'app-root',
@@ -6,5 +10,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  constructor(store: Store<AppState>) { }
   title = 'app';
 }

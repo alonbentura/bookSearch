@@ -1,5 +1,8 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Store } from '@ngrx/store';
+import { AddToWithList } from '../reducers/actions';
+import { Action } from 'rxjs/internal/scheduler/Action';
 
 
 @Component({
@@ -10,7 +13,8 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 export class DialogComponent implements OnInit {
   constructor(
 
-    public dialogRef: MatDialogRef<DialogComponent>, @Inject(MAT_DIALOG_DATA) public data: any
+    public dialogRef: MatDialogRef<DialogComponent>, @Inject(MAT_DIALOG_DATA) public data: any,
+    private store: Store<any>
   ) { }
 
   onNoClick(): void {
@@ -20,8 +24,11 @@ export class DialogComponent implements OnInit {
 
   }
 
-  onClickClose = () =>{
-    
+  onClickClose = () => {
+
   }
 
+  addToWishList = () => {
+    this.store.dispatch({ type: 'add' , this.book })
+  }
 }

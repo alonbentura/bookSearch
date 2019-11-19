@@ -10,13 +10,17 @@ import { SearchPageComponent } from './search-page/search-page.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { RouterModule } from '@angular/router';
 import { DialogComponent } from './dialog/dialog.component';
+import { WishListComponent } from './wish-list/wish-list.component';
+import { StoreModule } from '@ngrx/store';
+import { reducer } from './reducers';
 
 @NgModule({
   declarations: [
     AppComponent,
     WelcomeScreenComponent,
     SearchPageComponent,
-    DialogComponent
+    DialogComponent,
+    WishListComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +31,9 @@ import { DialogComponent } from './dialog/dialog.component';
     RouterModule.forRoot([
       { path: '', component: WelcomeScreenComponent },
       { path: 'search', component: SearchPageComponent, },
-    ])
+      { path: 'wishList', component: WishListComponent }
+    ]),
+    StoreModule.forRoot({})
   ],
   entryComponents: [
     DialogComponent
