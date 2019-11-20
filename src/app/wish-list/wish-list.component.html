@@ -1,1 +1,39 @@
-<p>wish-list works!</p>
+<div class="headline">Your WishList</div>
+<div *ngIf="(WishListBooks.length == 0)" class="emptyWithList">Your WishList Is Empty!</div>
+<ul *ngIf=WishListBooks>
+  <div class="book" *ngFor="let book of WishListBooks">
+    <div>
+      <div style='display: flex;'>
+        <div class="p">
+          Book Title:
+        </div>
+        <div>
+          {{ book.title }}
+        </div>
+      </div>
+      <div style='display: flex;'>
+        <div class="p"> Book Authors: </div>
+        <div *ngFor="let author of book.authors">{{author}}</div>
+      </div>
+      <div style='display: flex;'>
+        <div class="p">
+          Page Count:
+        </div>
+        {{book.pageCount}}
+      </div>
+      <div style='display: flex;'>
+        <div class="p">
+          Publisher:
+        </div>
+        {{book.publisher}}
+      </div>
+      <div style='display: flex;'>
+        <div class="p">Publish Date: </div> {{book.publishedDate}}
+      </div>
+      <div style='display: flex;'>
+        <div class="p">Language: </div>{{book.language}}
+      </div>
+    </div>
+    <button class="btn" (click)="clickRemove(book)">Remove Book</button>
+  </div>
+</ul>

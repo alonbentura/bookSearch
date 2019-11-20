@@ -1,5 +1,6 @@
 <div class="container">
   <p class="welcome">welcome</p>
-  <input matInput placeholder="Enter UserName" class="input" (change)="onChange($event.target.value)">
+  <input matInput placeholder="Enter UserName" class="input" type="text" (change)="onChange($event.target.value)"
+    (keyup.enter)="loginClick()">
   <button class="btn" (click)="loginClick()">Login</button>
 </div>

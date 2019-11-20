@@ -1,13 +1,14 @@
 <div>
-  <p class="welcome">Welcome {{user}} </p>
+  <div class="welcome">Welcome {{user}} </div>
   <div class="search-input-container">
     <p>Search A Book</p>
-    <div style="justify-content: space-between; display: flex;">
+    <div class="navBarContainer">
       <div>
-        <input matInput placeholder="Enter Your Search" class="input" (change)="onSearch($event.target.value)">
+        <input matInput placeholder="Enter Your Search" class="input" (change)="onSearch($event.target.value)"
+          (keyup.enter)="onClickSearch()">
         <button class="btn" (click)="onClickSearch()">Search</button>
       </div>
-      <a routerLink="/wishList" routerLinkActive="active">WishList</a>
+      <a class=" wishListText" routerLink="/wishList" routerLinkActive="active">WishList [ {{wishList.length}} ]</a>
     </div>
   </div>
   <ul>

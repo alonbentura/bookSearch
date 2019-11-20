@@ -1,14 +1,15 @@
 import { Action } from '@ngrx/store';
+import _ from 'lodash';
 
-const initialState = {
-  wishList: []
-};
+const wishList = [];
 
-export const reducer = (state = initialState, action: Action) => {
+export const reducer = (state = wishList, action) => {
   switch (action.type) {
 
     case 'ADD':
-      return console.log('add');
+      return [...state, action.payload.book];
+    case 'REMOVE':
+      return state.filter(item => item !== action.payload.book);
     default:
       return state;
   }

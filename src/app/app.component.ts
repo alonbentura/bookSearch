@@ -2,7 +2,9 @@ import { Component } from '@angular/core';
 import { Store, State } from '@ngrx/store';
 
 // tslint:disable-next-line:no-empty-interface
-interface AppState { }
+interface AppState {
+  readonly wishList: Array<any>;
+}
 
 @Component({
   selector: 'app-root',

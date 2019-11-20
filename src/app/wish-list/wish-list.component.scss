@@ -1,0 +1,44 @@
+.book {
+  min-width: 200px;
+  max-width: 600px;
+  min-height: 100px;
+  max-height: 200px;
+  border: solid 1px black;
+  display: flex;
+  flex-direction: row;
+  padding: 5px;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5px;
+}
+.btn {
+  width: 100px;
+  height: 40px;
+  background-color: red;
+  color: black;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.p {
+  font-size: 14px;
+  font-weight: bold;
+  color: blue;
+  font-style: italic;
+  margin-right: 5px;
+}
+.headline {
+  font-size: 30px;
+  font-style: oblique;
+  font-weight: 700;
+  text-align: center;
+  padding-top: 10px;
+}
+.emptyWithList {
+  font-size: 30px;
+  font-style: oblique;
+  font-weight: 700;
+  text-align: center;
+  padding-top: 10px;
+  color: red;
+}

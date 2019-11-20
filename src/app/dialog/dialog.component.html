@@ -1,11 +1,33 @@
-<div>
-  <p>Title: {{data.book.title}}</p>
-  <p>Language: {{data.book.language}}</p>
-  <p>PageCount: {{data.book.pageCount}}</p>
+<div style="display: grid; height: 100%;">
   <div>
-    <p>Authors:</p>
-    <div *ngFor="let author of data.book.authors">{{author}}</div>
+    <div style='display: flex;'>
+      <div class="p">
+        Title:
+      </div>
+      {{data.book.title}}
+    </div>
+    <div style='display: flex;'>
+      <div class="p">
+        Language:
+      </div>
+      {{data.book.language}}
+    </div>
+    <div style='display: flex;'>
+      <div class="p">
+        Page Count:
+      </div>
+      {{data.book.pageCount}}
+    </div>
+    <div style='display: flex;'>
+      <div class="p">
+        Authors:
+      </div>
+      <div *ngFor="let author of data.book.authors">{{author}},</div>
+
+    </div>
   </div>
-  <button (click)="addToWishList()">Add to wishlist</button>
-  <button (click)="onClickClose()"> Close dialog</button>
+  <div class="buttonsContainer">
+    <button class="addToWishList" (click)="addToWishList()">Add to WishList</button>
+    <button class="closeDialog" (click)="onClickClose()"> Close</button>
+  </div>
 </div>

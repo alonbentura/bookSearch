@@ -12,7 +12,9 @@ import { RouterModule } from '@angular/router';
 import { DialogComponent } from './dialog/dialog.component';
 import { WishListComponent } from './wish-list/wish-list.component';
 import { StoreModule } from '@ngrx/store';
-import { reducer } from './reducers';
+import { reducer } from './reducers/reducer';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,8 @@ import { reducer } from './reducers';
       { path: 'search', component: SearchPageComponent, },
       { path: 'wishList', component: WishListComponent }
     ]),
-    StoreModule.forRoot({})
+    StoreModule.forRoot({ wishList: reducer }),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
   ],
   entryComponents: [
     DialogComponent
